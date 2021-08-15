@@ -1,18 +1,25 @@
 package com.cbl.treeapp;
 
-import androidx.fragment.app.FragmentActivity;
-
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import com.cbl.treeapp.databinding.ActivityMapsBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.cbl.treeapp.databinding.ActivityMapsBinding;
 
 import java.util.ArrayList;
+
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -60,10 +67,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Sydney and move the camera
         for (LatLng arrayListTree : arrayListTree
         ) {
-            mMap.addMarker(new MarkerOptions().position(arrayListTree).title("Marker"));
+            mMap.addMarker(new MarkerOptions().position(arrayListTree).title("Marker")
+                    .icon(bitmapDescriptorFromVector(getApplicationContext(), R.drawable.ic_baseline_tour_24)));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(arrayListTree));
         }
 
 
+    }
+
+    private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+        vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 }
