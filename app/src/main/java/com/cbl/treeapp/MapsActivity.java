@@ -31,6 +31,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     LatLng marker3 = new LatLng(-32.08975, 151.75000);
     LatLng marker4 = new LatLng(-27.84512, 153.2127800);
     LatLng marker5 = new LatLng(-32.2578400, 148.6054502);
+    LatLng marker6 = new LatLng(-32.2578400, 148.6054502);
 
 
     @Override
