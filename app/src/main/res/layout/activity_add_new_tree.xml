@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_main"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background_main">
 
     <!-- Nested Scroll view -->
     <androidx.core.widget.NestedScrollView
@@ -27,49 +28,25 @@
                     android:layout_height="wrap_content"
                     android:text="Add New Tree"
                     android:textColor="@color/white"
-                    android:layout_marginBottom="@dimen/margin_top"
                     android:gravity="center"
-                    android:textSize="@dimen/text_size_header" />
+                    android:textSize="@dimen/text_size_header"
+                    android:layout_marginBottom="@dimen/margin_top"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/background_dropdown">
-
-                    <Spinner
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-
-                </LinearLayout>
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/tree_name"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size" />
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/tree_name"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -80,18 +57,10 @@
                     <Spinner
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="@string/ownership"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -100,8 +69,49 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/ownership"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_dropdown">
+
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/location"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/white"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -115,20 +125,11 @@
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
                         android:hint="@string/location"
-                        android:gravity="center"
-                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled" />
+                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:gravity="center"/>
 
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:text="@string/location"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -137,8 +138,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/tree_gridth"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -151,19 +161,10 @@
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
                         android:hint="@string/tree_gridth"
-                        android:gravity="center"
-                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled" />
+                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:gravity="center"/>
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"
-                    android:text="@string/tree_gridth"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -172,8 +173,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/height"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -186,18 +196,9 @@
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
                         android:hint="@string/height"
-                        android:gravity="center"
-                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled" />
+                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:gravity="center"/>
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"
-                    android:text="@string/height"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -206,8 +207,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/tree_shape"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -220,19 +230,10 @@
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
                         android:hint="@string/tree_shape"
-                        android:gravity="center"
-                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled" />
+                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:gravity="center"/>
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"
-                    android:text="@string/tree_shape"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -241,8 +242,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/landscape_application"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -253,18 +262,10 @@
                     <Spinner
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="@string/landscape_application"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -273,8 +274,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/landscape_use"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -285,18 +294,10 @@
                     <Spinner
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="@string/landscape_use"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -305,8 +306,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/root_damage_potential"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -317,18 +326,10 @@
                     <Spinner
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="@string/root_damage_potential"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -337,8 +338,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/density_in_leaf"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -349,18 +358,10 @@
                     <Spinner
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="@string/density_in_leaf"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -369,8 +370,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/density_out_of_leaf"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -381,18 +390,10 @@
                     <Spinner
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="@string/density_out_of_leaf"
-                    android:textSize="@dimen/text_size" />
 
 
 
@@ -401,8 +402,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/disease_susceptability"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -413,18 +422,11 @@
                     <Spinner
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="@string/disease_susceptability"
-                    android:textSize="@dimen/text_size" />
 
 
             </LinearLayout>
@@ -432,8 +434,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/fine_resistance"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -444,18 +454,11 @@
                     <Spinner
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="@string/fine_resistance"
-                    android:textSize="@dimen/text_size" />
 
 
             </LinearLayout>
@@ -463,8 +466,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/photo"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -475,18 +486,11 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/textview_height"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:text="@string/photo"
-                    android:textSize="@dimen/text_size" />
 
 
             </LinearLayout>
@@ -494,14 +498,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
 
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_weight="1"
-                    android:padding="@dimen/button_gap" />
+                    android:padding="@dimen/button_gap"/>
 
 
             </LinearLayout>
@@ -509,19 +513,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/text_size_header"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/text_size_header">
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginRight="@dimen/button_gap"
                     android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
                     android:backgroundTint="@color/design_default_color_error"
                     android:text="@string/cancel"
-                    android:textSize="@dimen/text_size"
-                    app:cornerRadius="@dimen/button_gap" />
+                    app:cornerRadius="@dimen/button_gap"
+                    android:layout_marginRight="@dimen/button_gap"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
@@ -530,8 +534,8 @@
                     android:layout_weight="1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size"
-                    android:text="@string/save"
-                    app:cornerRadius="@dimen/button_gap" />
+                    app:cornerRadius="@dimen/button_gap"
+                    android:text="@string/save"/>
 
 
             </LinearLayout>
