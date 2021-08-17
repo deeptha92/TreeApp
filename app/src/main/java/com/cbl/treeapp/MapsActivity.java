@@ -1,10 +1,12 @@
 package com.cbl.treeapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 
 import com.cbl.treeapp.databinding.ActivityMapsBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -15,6 +17,7 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -25,14 +28,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+    private FloatingActionButton floatingActionButtonAdd;
     ArrayList<LatLng> arrayListTree = new ArrayList<LatLng>();
     LatLng sydney = new LatLng(-34, 151);
     LatLng marker2 = new LatLng(-31.08322, 150.91672);
     LatLng marker3 = new LatLng(-32.08975, 151.75000);
     LatLng marker4 = new LatLng(-27.84512, 153.2127800);
     LatLng marker5 = new LatLng(-32.2578400, 148.6054502);
-    LatLng marker6 = new LatLng(-32.2578400, 148.6054502);
-    LatLng marker7 = new LatLng(-32.2578400, 148.6054502);
 
 
     @Override
@@ -45,12 +47,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
+        floatingActionButtonAdd = findViewById(R.id.FbAddNew);
+
         mapFragment.getMapAsync(this);
         arrayListTree.add(sydney);
         arrayListTree.add(marker2);
         arrayListTree.add(marker3);
         arrayListTree.add(marker4);
         arrayListTree.add(marker5);
+
+        floatingActionButtonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapsActivity.this, AddNewTreeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**
