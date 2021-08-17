@@ -25,10 +25,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_top"
-                    android:gravity="center"
                     android:text="Add New Tree"
                     android:textColor="@color/white"
+                    android:layout_marginBottom="@dimen/margin_top"
+                    android:gravity="center"
                     android:textSize="@dimen/text_size_header" />
 
             </LinearLayout>
@@ -62,6 +62,7 @@
                     android:textSize="@dimen/text_size" />
 
 
+
             </LinearLayout>
 
             <LinearLayout
@@ -72,8 +73,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <Spinner
@@ -88,9 +89,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/ownership"
                     android:textColor="@color/white"
+                    android:text="@string/ownership"
                     android:textSize="@dimen/text_size" />
+
 
 
             </LinearLayout>
@@ -103,8 +105,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
 
@@ -112,8 +114,8 @@
                         android:layout_width="0dp"
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:hint="@string/location"
+                        android:gravity="center"
                         android:textColorHint="@color/common_google_signin_btn_text_light_disabled" />
 
 
@@ -122,13 +124,14 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:layout_gravity="center"
                     android:text="@string/location"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
 
 
+
             </LinearLayout>
 
             <LinearLayout
@@ -139,16 +142,16 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:hint="@string/tree_gridth"
+                        android:gravity="center"
                         android:textColorHint="@color/common_google_signin_btn_text_light_disabled" />
 
                 </LinearLayout>
@@ -156,11 +159,12 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
                     android:text="@string/tree_gridth"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
+
 
 
             </LinearLayout>
@@ -173,27 +177,28 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:hint="@string/height"
+                        android:gravity="center"
                         android:textColorHint="@color/common_google_signin_btn_text_light_disabled" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="@string/height"
                     android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:text="@string/height"
                     android:textSize="@dimen/text_size" />
+
 
 
             </LinearLayout>
@@ -206,16 +211,16 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:hint="@string/tree_shape"
+                        android:gravity="center"
                         android:textColorHint="@color/common_google_signin_btn_text_light_disabled" />
 
                 </LinearLayout>
@@ -223,11 +228,12 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="@string/tree_shape"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
+
 
 
             </LinearLayout>
@@ -240,8 +246,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <Spinner
@@ -256,9 +262,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:text="@string/landscape_application"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
+
 
 
             </LinearLayout>
@@ -271,8 +278,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <Spinner
@@ -287,9 +294,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:text="@string/landscape_use"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
+
 
 
             </LinearLayout>
@@ -302,8 +310,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <Spinner
@@ -318,9 +326,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:text="@string/root_damage_potential"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
+
 
 
             </LinearLayout>
@@ -333,8 +342,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <Spinner
@@ -349,9 +358,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:text="@string/density_in_leaf"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
+
 
 
             </LinearLayout>
@@ -364,8 +374,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <Spinner
@@ -380,9 +390,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:text="@string/density_out_of_leaf"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
+
 
 
             </LinearLayout>
@@ -395,8 +406,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <Spinner
@@ -411,8 +422,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:text="@string/disease_susceptability"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
 
 
@@ -426,8 +437,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <Spinner
@@ -442,8 +453,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/fine_resistance"
                     android:textColor="@color/white"
+                    android:text="@string/fine_resistance"
                     android:textSize="@dimen/text_size" />
 
 
@@ -457,8 +468,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/background_dropdown">
 
                     <TextView
@@ -473,8 +484,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/photo"
                     android:textColor="@color/white"
+                    android:text="@string/photo"
                     android:textSize="@dimen/text_size" />
 
 
@@ -504,22 +515,22 @@
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/button_gap"
                     android:layout_weight="1"
+                    android:layout_marginRight="@dimen/button_gap"
+                    android:textColor="@color/white"
                     android:backgroundTint="@color/design_default_color_error"
                     android:text="@string/cancel"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/text_size"
                     app:cornerRadius="@dimen/button_gap" />
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:backgroundTint="@color/design_default_color_secondary_variant"
-                    android:text="@string/save"
+                    android:layout_weight="1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size"
+                    android:text="@string/save"
                     app:cornerRadius="@dimen/button_gap" />
 
 
