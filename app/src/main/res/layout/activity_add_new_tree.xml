@@ -107,26 +107,49 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight=".5"
                     android:text="@string/location"
                     android:layout_gravity="center"
                     android:textSize="@dimen/text_size"
+                    android:textColor="@color/white"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/BtnGetLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="@string/get_location"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/button_gap"
+                    android:layout_marginRight="@dimen/button_gap"
                     android:textColor="@color/white"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/background_dropdown">
+                    android:orientation="vertical">
 
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:id="@+id/TvLatitude"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
-                        android:hint="@string/location"
+                        android:hint="@string/latitude"
                         android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="@drawable/background_dropdown"/>
+
+                    <TextView
+                        android:id="@+id/TvLongitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/textview_height"
+                        android:layout_weight="1"
+                        android:hint="@string/longitude"
+                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:gravity="center"
+                        android:background="@drawable/background_dropdown"/>
 
 
                 </LinearLayout>
@@ -475,18 +498,20 @@
                     android:layout_weight="1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size"
+                    android:layout_gravity="center"
                     android:text="@string/photo"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/background_dropdown">
+                    android:layout_height="wrap_content">
 
-                    <TextView
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/BtnUpload"
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/textview_height"
-                        android:layout_weight="1"/>
+                        android:layout_height="@dimen/margin_left"
+                        android:layout_weight="1"
+                        android:text="@string/upload_btn"/>
 
 
                 </LinearLayout>
@@ -502,9 +527,12 @@
                 android:layout_marginBottom="@dimen/text_size_header">
 
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
+                    android:id="@+id/IvImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.7"
                     android:padding="@dimen/button_gap"/>
 
 

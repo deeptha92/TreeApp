@@ -103,6 +103,9 @@
     <string name="tree_name">Tree Name</string>
     <string name="ownership">Ownership</string>
     <string name="location">Location</string>
+    <string name="get_location">Get Location</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
     <string name="tree_gridth">Tree Gridth</string>
     <string name="height">Height</string>
     <string name="tree_shape">Tree Shape</string>
@@ -119,5 +122,6 @@
 
     <string name="save">SAVE</string>
     <string name="cancel">CANCEL</string>
+    <string name="upload_btn">UPLOAD IMAGE</string>
 
 </resources>
