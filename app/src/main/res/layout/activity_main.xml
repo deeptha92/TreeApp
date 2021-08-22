@@ -115,7 +115,6 @@
                 app:cornerRadius="@dimen/button_radius"
                 android:text="@string/facebook"
                 app:iconGravity="textStart"
-                app:icon="@drawable/ic_outline_lock_24"
                 android:layout_marginTop="@dimen/margin_top"
                 tools:ignore="RtlCompat" />
 
@@ -128,7 +127,6 @@
                 app:cornerRadius="@dimen/button_radius"
                 android:text="@string/google"
                 app:iconGravity="textStart"
-                app:icon="@drawable/ic_outline_lock_24"
                 android:layout_marginTop="@dimen/margin_top"
                 tools:ignore="RtlCompat" />
 

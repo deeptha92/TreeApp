@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,6 +19,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -37,6 +39,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.List;
 
 public class AddNewTreeActivity extends AppCompatActivity implements LocationListener {
     public TextView TvLatitude, TvLongitude;
@@ -49,7 +52,7 @@ public class AddNewTreeActivity extends AppCompatActivity implements LocationLis
     public Criteria criteria;
     public String bestProvider;
     Intent intentThatCalled;
-    private String Document_img1="";
+    private String Document_img1 = "";
     BitmapFactory.Options options;
 
 //    String voice2text; //added
@@ -70,7 +73,9 @@ public class AddNewTreeActivity extends AppCompatActivity implements LocationLis
             @Override
             public void onClick(View v) {
 //                LocationManager nManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                getLocation();
+//                getLocation();
+                checkPermission();
+
             }
         });
 
@@ -82,6 +87,31 @@ public class AddNewTreeActivity extends AppCompatActivity implements LocationLis
         });
 
 
+    }
+
+    public void checkPermission() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && checkSelfPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+
+                getLocation();
+
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION,}, 1);
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+
+            getLocation();
+
+        } else {
+            checkPermission();
+        }
     }
 
     private void OnGPS() {
@@ -106,41 +136,86 @@ public class AddNewTreeActivity extends AppCompatActivity implements LocationLis
     }
 
     protected void getLocation() {
-        if (isLocationEnabled(AddNewTreeActivity.this)) {
-            locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-            criteria = new Criteria();
-            bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true)).toString();
+//        if (isLocationEnabled(AddNewTreeActivity.this)) {
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        boolean gps_enabled = false;
+        boolean network_enabled = false;
 
-            //You can still do this if you like, you might get lucky:
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        try {
+            gps_enabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        } catch (Exception ex) {
+        }
 
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return;
-            }
-            Location location = locationManager.getLastKnownLocation(bestProvider);
-            if (location != null) {
-                Log.e("TAG", "GPS is on");
-                latitude = location.getLatitude();
-                longitude = location.getLongitude();
-                Toast.makeText(AddNewTreeActivity.this, "latitude:" + latitude + " longitude:" + longitude, Toast.LENGTH_SHORT).show();
+        try {
+            network_enabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        } catch (Exception ex) {
+        }
+
+        if (!gps_enabled && !network_enabled) {
+            // notify user
+            new AlertDialog.Builder(this)
+                    .setMessage("ALERT")
+                    .setPositiveButton("OPEN SETTIGNS", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                            AddNewTreeActivity.this.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                        }
+                    })
+                    .setNegativeButton("CANCEL", null)
+                    .show();
+        } else {
+            if (isLocationEnabled(AddNewTreeActivity.this)) {
+                criteria = new Criteria();
+                bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true)).toString();
+
+                //You can still do this if you like, you might get lucky:
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                Location location = getLastKnownLocation();
+                if (location != null) {
+                    Log.e("TAG", "GPS is on");
+                    latitude = location.getLatitude();
+                    longitude = location.getLongitude();
+                    Toast.makeText(AddNewTreeActivity.this, "latitude:" + latitude + " longitude:" + longitude, Toast.LENGTH_SHORT).show();
 //                searchNearestPlace(voice2text);
-                TvLatitude.setText(latitude+"");
-                TvLongitude.setText(longitude+"");
-            }
-            else{
-                //This is what you need:
-                locationManager.requestLocationUpdates(bestProvider, 1000, 0, this);
+                    TvLatitude.setText(latitude + "");
+                    TvLongitude.setText(longitude + "");
+                } else {
+                    //This is what you need:
+                    locationManager.requestLocationUpdates(bestProvider, 1000, 0, this);
+                }
+            } else {
+                //prompt user to enable location....
+                //.................
             }
         }
-        else
-        {
-            //prompt user to enable location....
-            //.................
+
+
+    }
+
+    private Location getLastKnownLocation() {
+        locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
+        List<String> providers = locationManager.getProviders(true);
+        Location bestLocation = null;
+        for (String provider : providers) {
+
+            @SuppressLint("MissingPermission") Location l = locationManager.getLastKnownLocation(provider);
+            if (l == null) {
+                continue;
+            }
+            if (bestLocation == null || l.getAccuracy() < bestLocation.getAccuracy()) {
+                // Found best last known location: %s", l);
+                bestLocation = l;
+            }
         }
+        return bestLocation;
     }
 
     @Override
@@ -170,7 +245,7 @@ public class AddNewTreeActivity extends AppCompatActivity implements LocationLis
     }
 
     private void uploadImage() {
-        final CharSequence[] options = { "Take Photo", "Choose from Gallery","Cancel" };
+        final CharSequence[] options = {"Take Photo", "Choose from Gallery", "Cancel"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Choose your profile picture");
@@ -186,7 +261,7 @@ public class AddNewTreeActivity extends AppCompatActivity implements LocationLis
 
                 } else if (options[item].equals("Choose from Gallery")) {
                     Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    startActivityForResult(pickPhoto , 1);
+                    startActivityForResult(pickPhoto, 1);
 
                 } else if (options[item].equals("Cancel")) {
                     dialog.dismiss();
