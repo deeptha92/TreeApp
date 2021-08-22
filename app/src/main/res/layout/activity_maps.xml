@@ -22,5 +22,15 @@
         android:backgroundTint="@color/facebook_login"
         android:src="@drawable/ic_baseline_add_24" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/FbRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin_top"
+        android:layout_marginTop="@dimen/margin_top"
+        android:backgroundTint="@color/facebook_login"
+        android:src="@drawable/ic_baseline_refresh_24" />
+
 
 </RelativeLayout>

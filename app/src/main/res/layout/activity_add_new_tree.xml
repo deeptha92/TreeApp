@@ -137,7 +137,7 @@
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
                         android:hint="@string/latitude"
-                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:textColorHint="@color/white"
                         android:gravity="center"
                         android:background="@drawable/background_dropdown"/>
 
@@ -147,7 +147,7 @@
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
                         android:hint="@string/longitude"
-                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:textColorHint="@color/white"
                         android:gravity="center"
                         android:background="@drawable/background_dropdown"/>
 
@@ -184,7 +184,7 @@
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
                         android:hint="@string/tree_gridth"
-                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:textColorHint="@color/white"
                         android:gravity="center"/>
 
                 </LinearLayout>
@@ -219,7 +219,7 @@
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
                         android:hint="@string/height"
-                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:textColorHint="@color/white"
                         android:gravity="center"/>
                 </LinearLayout>
 
@@ -253,7 +253,7 @@
                         android:layout_height="@dimen/textview_height"
                         android:layout_weight="1"
                         android:hint="@string/tree_shape"
-                        android:textColorHint="@color/common_google_signin_btn_text_light_disabled"
+                        android:textColorHint="@color/white"
                         android:gravity="center"/>
 
                 </LinearLayout>
